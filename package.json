@@ -1,0 +1,29 @@
+{
+  "name": "iota-mam-signaling-server",
+  "version": "1.0.0",
+  "description": "- Node v6.14.3 or later",
+  "main": "index.js",
+  "dependencies": {
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtrabelsi/IOTA-MAM-Signaling-server.git"
+  },
+  "keywords": [
+    "mam",
+    "iota",
+    "signaling",
+    "server"
+  ],
+  "author": "marwen trabelsi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtrabelsi/IOTA-MAM-Signaling-server/issues"
+  },
+  "homepage": "https://github.com/mtrabelsi/IOTA-MAM-Signaling-server#readme"
+}
