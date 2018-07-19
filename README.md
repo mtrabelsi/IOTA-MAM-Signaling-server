@@ -5,3 +5,9 @@ the subscribers of the channels needs to know the root address and the sideKey (
 # Requirements
 
 - Node v8.11.3 or later
+
+# Roadmap
+
+- [x] make it work for single channel
+- [ ] support for multiple channels
+- [ ] Data persistence 
