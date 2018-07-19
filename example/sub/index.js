@@ -3,7 +3,7 @@ const IOTA = require('iota.lib.js')
 const iota = new IOTA({ provider: `https://testnet140.tangle.works` })
 
 // Init State
-let root = 'VNNOGXVPMOLKJPT9MMXVURNKN9IRHGCAPLBBUDKGJCYVQUJUMYWKNDMSSEKHHEIDR9LIYDRLAUOUS9PCT'
+let root = 'NSYZMGHHOLQFOWTTQIAGVCOCIAU99MQTUENKMQKUJDNDDEIXMSHJKBJDKOQPSJXFEHCAHCNSZQQLKUEME'
 let sideKey = 'IREALLYENJOYPOTATORELATEDPRODUCTS'
 // Initialise MAM State
 let mamState = Mam.init(iota)

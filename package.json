@@ -4,12 +4,21 @@
   "description": "- Node v6.14.3 or later",
   "main": "index.js",
   "dependencies": {
-    "socket.io": "^2.1.1",
+    "bufferutil": "^4.0.0",
     "iota.lib.js": "^0.4.7",
-    "mam.client.js": "git+https://github.com/iotaledger/mam.client.js.git"
+    "mam.client.js": "git+https://github.com/iotaledger/mam.client.js.git",
+    "socket.io": "^2.1.1",
+    "utf-8-validate": "^5.0.1",
+    "uws": "^10.148.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "http-server": "^0.11.1"
+  },
   "scripts": {
+    "start": "node src/server.js",
+    "demo": "browserify example/pub/index.js -o example/pub/pub.bundle.js && browserify example/sub/index.js -o example/sub/sub.bundle.js",
+    "serve": "http-server example/pub",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

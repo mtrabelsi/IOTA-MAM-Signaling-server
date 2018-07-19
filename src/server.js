@@ -2,13 +2,15 @@
 var io = require('socket.io')(8080);
 
 io.on('connection', function (socket) {
-  io.emit('pm', { will: 'be received by everyone'});
+  socket.on('mam.channel.info', function (info) {
+    console.log('I received a private message by ', info);
+  });
 
-  socket.on('pmc', function (from, msg) {
-    console.log('I received a private message by ', from, ' saying ', msg);
+  socket.on('mam.channel.ready', function () {
+    console.log('MAM channel is ready for fetching');
   });
 
   socket.on('disconnect', function () {
-    io.emit('user disconnected');
+    io.emit('node disconnected');
   });
 });
