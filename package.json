@@ -4,7 +4,9 @@
   "description": "- Node v6.14.3 or later",
   "main": "index.js",
   "dependencies": {
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.1.1",
+    "iota.lib.js": "^0.4.7",
+    "mam.client.js": "git+https://github.com/iotaledger/mam.client.js.git"
   },
   "devDependencies": {},
   "scripts": {
