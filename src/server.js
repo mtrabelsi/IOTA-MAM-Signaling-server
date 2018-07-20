@@ -1,9 +1,7 @@
 // note, io(<port>) will create a http server for you
 var io = require('socket.io')(8080);
-
-let channel = {
-
-}
+// will be filled by the Publisher info
+let channel = {}
 
 io.on('connection', function (socket) {
   socket.on('mam.channel.info', function (info) {
