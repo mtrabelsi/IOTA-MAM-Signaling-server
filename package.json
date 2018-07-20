@@ -17,8 +17,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "demo": "browserify example/pub/index.js -o example/pub/pub.bundle.js && browserify example/sub/index.js -o example/sub/sub.bundle.js",
-    "serve": "http-server example/pub",
+    "demo": "browserify example/pub/index.js -o example/pub/pub.bundle.js && browserify example/sub/index.js -o example/sub/sub.bundle.js && http-server example",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
