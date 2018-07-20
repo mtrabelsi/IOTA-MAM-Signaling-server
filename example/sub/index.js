@@ -1,31 +1,29 @@
 const Mam = require('mam.client.js')
 const IOTA = require('iota.lib.js')
-const iota = new IOTA({ provider: `https://testnet140.tangle.works` })
+const config = require('./../../config')
+const io = require('socket.io-client')
 
-// Init State
-let root = 'NSYZMGHHOLQFOWTTQIAGVCOCIAU99MQTUENKMQKUJDNDDEIXMSHJKBJDKOQPSJXFEHCAHCNSZQQLKUEME'
-let sideKey = 'IREALLYENJOYPOTATORELATEDPRODUCTS'
-// Initialise MAM State
-let mamState = Mam.init(iota)
-/*
-// Publish to tangle
-const publish = async packet => {
-    const message = Mam.create(mamState, packet)
-    mamState = message.state
-    await Mam.attach(message.payload, message.address)
-    return message.root
-} */
+const iota = new IOTA({ provider: config.provider })
 
-const execute = async () => {
-    // Publish and save root.
-  //  root = await publish('POTATOONE')
-    // Publish but not save root
-    //await publish('POTATOTWO')
+const socket = io(config.signalingServer);
 
-    ///////////////////////////////////
-    // Fetch the messages syncronously
-    const resp = await Mam.fetch(root, 'restricted', sideKey, console.log)
-    console.log('resp')
-}
+socket.on('connect', function () {
+  // on connect handler
+});
 
-execute()
+socket.on('mam.channel.ready', function (channel) {
+  console.log('client channel ready', channel)
+  // This will be communicated by the signaling server
+  let root = channel.root
+  // this should be private and not sent through the signaling server
+  let sideKey = config.sideKey
+  // Initialise MAM State
+  let mamState = Mam.init(iota)
+
+  const execute = async () => {
+      // Fetch the messages syncronously
+      const resp = await Mam.fetch(root, config.mode, sideKey, console.log)
+  }
+
+  execute()
+});

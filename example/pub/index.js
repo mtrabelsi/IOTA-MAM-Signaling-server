@@ -1,17 +1,14 @@
-
 const Mam = require('mam.client.js')
 const IOTA = require('iota.lib.js')
 const io = require('socket.io-client')
-const iota = new IOTA({ provider: `https://testnet140.tangle.works` })
+const config = require('./../../config')
 
-const socket = io('http://localhost:8080');
+const iota = new IOTA({ provider: config.provider })
+
+const socket = io(config.signalingServer);
 
 socket.on('connect', function () {
-  //socket.send('hi');
-
-  /*socket.on('pm', function (msg) {
-    console.log('fromserver', msg)
-  }); */
+  // on connect handler
 });
 
 // Initialise MAM State
@@ -20,8 +17,8 @@ let mamState = Mam.init(iota)
 // Set channel mode
 mamState = Mam.changeMode(
      mamState,
-    'restricted',
-    'IREALLYENJOYPOTATORELATEDPRODUCTS'
+     config.mode,
+     config.sideKey
 )
 
 // Publish to tangle
@@ -41,16 +38,6 @@ const publish = async packet => {
     await Mam.attach(message.payload, message.address)
     // notifying the subs that the message has been published
     socket.emit('mam.channel.ready', {});
-
-/*
-    // Fetch Stream Async to Test
-    const resp = await Mam.fetch(
-        message.root,
-        'restricted',
-        'IREALLYENJOYPOTATORELATEDPRODUCTS',
-        console.log
-    )
-    console.log(resp) */
 }
 
 publish('MARWEN999AAA')

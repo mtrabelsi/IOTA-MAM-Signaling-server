@@ -1,21 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Demo IOTA MAM Signaling server</h1>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
-
-<script>
-
-var socket = io('http://localhost:8080');
-socket.on('connect', function () {
-  socket.send('hi');
-
-  socket.on('pm', function (msg) {
-    console.log('fromserver', msg)
-  });
-});
-
-</script>
+<h1>Demo MAM Subrcriber</h1>
+<script src="sub.bundle.js"></script>
 
 </body>
 </html>
