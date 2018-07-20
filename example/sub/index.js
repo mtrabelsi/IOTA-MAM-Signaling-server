@@ -4,9 +4,12 @@ const config = require('./../../config')
 const io = require('socket.io-client')
 
 const iota = new IOTA({ provider: config.provider })
+const span = document.querySelector(".loading")
 
 const socket = io(config.signalingServer);
-
+socket.on('mam.channel.info', function(info) {
+  span.innerHTML = `Fetching Data from <b>${info.root}</b>...`
+})
 socket.on('mam.channel.ready', async function (channel) {
   console.log('client channel ready', channel)
   // This will be communicated by the signaling server
@@ -16,5 +19,8 @@ socket.on('mam.channel.ready', async function (channel) {
   // Initialise MAM State
   let mamState = Mam.init(iota)
   // Fetch the messages syncronously
-  const resp = await Mam.fetch(root, config.mode, sideKey, console.log)
+  const resp = await Mam.fetch(root, config.mode, sideKey, (data) => {
+    span.innerHTML = `<b>Received Data:</b> ${data}`
+  })
+
 });

@@ -7,10 +7,6 @@ const iota = new IOTA({ provider: config.provider })
 
 const socket = io(config.signalingServer);
 
-socket.on('connect', function () {
-  // on connect handler
-});
-
 // Initialise MAM State
 let mamState = Mam.init(iota)
 
@@ -29,6 +25,9 @@ const publish = async packet => {
     mamState = message.state
     console.log('Root: ', message.root)
     console.log('Address: ', message.address)
+
+    const span = document.querySelector(".loading")
+    span.innerHTML = `<b>Root: </b>${message.root}</br><b>Address: </b>${message.address}`
     // sending to the subs my root address
     socket.emit('mam.channel.info', {
         root: message.root,
@@ -40,4 +39,4 @@ const publish = async packet => {
     socket.emit('mam.channel.ready', {});
 }
 
-publish('MARWEN999AAA')
+publish('ILOVEBANANAAAAA999')

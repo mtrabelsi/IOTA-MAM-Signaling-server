@@ -7,6 +7,7 @@ io.on('connection', function (socket) {
   socket.on('mam.channel.info', function (info) {
     channel = info
     console.log('Channel info updated ', info);
+    io.emit('mam.channel.info', info);
   });
 
   socket.on('mam.channel.ready', function () {
