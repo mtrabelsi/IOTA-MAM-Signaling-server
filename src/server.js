@@ -20,3 +20,5 @@ io.on('connection', function (socket) {
     io.emit('node disconnected');
   });
 });
+
+console.log('Signaling Server is running.')
