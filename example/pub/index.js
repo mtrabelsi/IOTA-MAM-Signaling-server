@@ -2,6 +2,7 @@ const Mam = require('mam.client.js')
 const IOTA = require('iota.lib.js')
 const io = require('socket.io-client')
 const config = require('./../../config')
+const $ = require('jquery');
 
 const iota = new IOTA({ provider: config.provider })
 
@@ -26,8 +27,7 @@ const publish = async packet => {
     console.log('Root: ', message.root)
     console.log('Address: ', message.address)
 
-    const span = document.querySelector(".loading")
-    span.innerHTML = `<b>Root: </b>${message.root}</br><b>Address: </b>${message.address}`
+    $(".loading").html(`<b>Root: </b>${message.root}</br><b>Address: </b>${message.address}`);
     // sending to the subs my root address
     socket.emit('mam.channel.info', {
         root: message.root,
@@ -39,4 +39,7 @@ const publish = async packet => {
     socket.emit('mam.channel.ready', {});
 }
 
-publish('ILOVEBANANAAAAA999')
+$("a.button").click(function() {
+  const payload = $('.payload').val();
+  publish(payload)
+});
