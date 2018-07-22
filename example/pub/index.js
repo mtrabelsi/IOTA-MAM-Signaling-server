@@ -2,6 +2,7 @@ const Mam = require('mam.client.js')
 const IOTA = require('iota.lib.js')
 const io = require('socket.io-client')
 const config = require('./../../config')
+const $ = require('jquery');
 
 const iota = new IOTA({ provider: config.provider })
 
@@ -39,4 +40,7 @@ const publish = async packet => {
     socket.emit('mam.channel.ready', {});
 }
 
-publish('ILOVEBANANAAAAA999')
+$("a.button").click(function() {
+  const payload = $('.payload').val();
+  publish(payload)
+});
