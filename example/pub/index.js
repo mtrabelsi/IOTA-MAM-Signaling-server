@@ -27,8 +27,7 @@ const publish = async packet => {
     console.log('Root: ', message.root)
     console.log('Address: ', message.address)
 
-    const span = document.querySelector(".loading")
-    span.innerHTML = `<b>Root: </b>${message.root}</br><b>Address: </b>${message.address}`
+    $(".loading").html(`<b>Root: </b>${message.root}</br><b>Address: </b>${message.address}`);
     // sending to the subs my root address
     socket.emit('mam.channel.info', {
         root: message.root,
