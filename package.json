@@ -14,11 +14,15 @@
   },
   "devDependencies": {
     "browserify": "^16.2.2",
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.1",
+    "npm-run-all": "^4.1.3"
   },
   "scripts": {
-    "start": "node src/server.js",
-    "demo": "browserify example/pub/index.js -o example/pub/pub.bundle.js && browserify example/sub/index.js -o example/sub/sub.bundle.js && http-server example",
+    "start:server": "node src/server.js",
+    "start:demo": "run-s build:demo:sub build:demo:pub serve",
+    "build:demo:sub": "browserify example/sub/index.js -o example/sub/sub.bundle.js",
+    "build:demo:pub": "browserify example/pub/index.js -o example/pub/pub.bundle.js",
+    "serve": "http-server example",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
