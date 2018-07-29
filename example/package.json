@@ -11,6 +11,7 @@
     "mam.client.js": "git+https://github.com/iotaledger/mam.client.js.git",
     "next": "^6.1.1",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-loader-spinner": "^2.1.0"
   }
 }
