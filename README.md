@@ -3,10 +3,10 @@ IOTA MAM make it easy to stream data from two or more peers in a secure way, how
 the subscribers of the channels needs to know the root address and the sideKey ( if mode = restricted ), these informations needs to be sent to all subscribers BEFORE the connection take place. This is excatly the same issue with Webrtc, the connection needs to be initialized and peers needs to get know each others - except for MAM is only 1 way connection.
 
 # Goal
-This repos is just providing a tool (server) and some API that you can use right away to solve this problem, you can use as :
 
-- A tool/Server to get your peers automatically connected without worrying about managing the root addresses and so on - you only care about your APP logic.
-- You want to make realtime connection between remote peers ( devices, browsers, etc ) - basically anything that can be connected to internet.
+- Automatically connects peers together
+- Gives auto peers discovery
+- Support multi-channel ( in the Roadmap )
 
 # Quick Install & Demo
 
