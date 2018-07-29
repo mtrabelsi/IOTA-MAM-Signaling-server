@@ -11,10 +11,11 @@ This repos is just providing a tool (server) and some API that you can use right
 # Quick Install & Demo
 
 - `git clone git@github.com:mtrabelsi/IOTA-MAM-Signaling-server.git`
-- `npm i`
-- `npm start` *to start the signaling Server*
-- `npm run demo` *to build and start serving local files*
-- visit http://localhost:8081/sub/ and then http://localhost:8081/pub/
+- `npm i` `cd example && npm i`
+- `npm run start:server` *to start the signaling Server*
+- `npm run start:demo` *to build and start the demo apps*
+- visit http://localhost:8081/pub/ and then http://localhost:8081/pub/
+- Try to publish some Data and the subcribers will automatically fetch it as soon as it is available.
 
 # Requirements
 
@@ -27,12 +28,3 @@ This repos is just providing a tool (server) and some API that you can use right
 - [ ] Data persistence
 
 
-# Requirements
-
-- Node v8.11.3 or later
-
-# Roadmap
-
-- [x] make it work for single channel
-- [ ] support for multiple channels
-- [ ] Data persistence
