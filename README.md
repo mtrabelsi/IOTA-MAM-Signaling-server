@@ -11,7 +11,7 @@ This repos is just providing a tool (server) and some API that you can use right
 # Quick Install & Demo
 
 - `git clone git@github.com:mtrabelsi/IOTA-MAM-Signaling-server.git`
-- `npm i` `cd example && npm i`
+- `npm i` && `cd example && npm i`
 - `npm run start:server` *to start the signaling Server*
 - `npm run start:demo` *to build and start the demo apps*
 - visit http://localhost:8081/pub/ and then http://localhost:8081/pub/
@@ -24,7 +24,7 @@ This repos is just providing a tool (server) and some API that you can use right
 # Roadmap
 
 - [x] make it work for single channel
-- [ ] support for multiple channels
+- [ ] support for multiple app and channels
 - [ ] Data persistence
 
 
