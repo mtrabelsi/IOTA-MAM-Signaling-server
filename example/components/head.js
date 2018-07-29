@@ -9,7 +9,7 @@ export default () => (
     </Head>
     <style jsx global>{`
       body {
-        color: #fff;
+        background-color: #fff;
       }
     `}</style>
   </div>

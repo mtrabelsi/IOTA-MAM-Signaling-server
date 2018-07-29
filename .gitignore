@@ -1,3 +1,4 @@
 node_modules
 example/pub/pub.bundle.js
 example/sub/sub.bundle.js
+.next
