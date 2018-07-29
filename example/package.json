@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "iota.lib.js": "^0.4.7",
+    "jquery": "^2.1.1",
+    "mam.client.js": "git+https://github.com/iotaledger/mam.client.js.git",
+    "next": "^6.1.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}
