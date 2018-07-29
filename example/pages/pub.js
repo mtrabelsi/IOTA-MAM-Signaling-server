@@ -38,7 +38,7 @@ mamState = Mam.changeMode(
      this.setState({ payload: e.target.value.toUpperCase() })
    }
    async handlePublish(e) {
-     this.setState({ loading: true })
+     this.setState({ loading: true, channelReady: false })
 
      // Create MAM Payload - STRING OF TRYTES
      const message = Mam.create(mamState, this.state.payload)
