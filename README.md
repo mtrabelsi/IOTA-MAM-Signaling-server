@@ -18,7 +18,7 @@ the subscribers of the channels needs to know the root address and the sideKey (
 - `npm i` && `cd example && npm i`
 - `$/ npm run start:server` *to start the signaling Server*
 - `$/example/ npm run dev` *to build and start the demo apps*
-- visit http://localhost:8081/pub/ and then http://localhost:8081/pub/
+- visit http://localhost:8081/pub/ and then http://localhost:8081/sub/
 - Try to publish some Data and the subcribers will automatically fetch it as soon as it is available.
 
 # Requirements
