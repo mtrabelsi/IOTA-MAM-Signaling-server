@@ -16,8 +16,8 @@ the subscribers of the channels needs to know the root address and the sideKey (
 
 - `git clone git@github.com:mtrabelsi/IOTA-MAM-Signaling-server.git`
 - `npm i` && `cd example && npm i`
-- `npm run start:server` *to start the signaling Server*
-- `npm run dev` *to build and start the demo apps*
+- `$/ npm run start:server` *to start the signaling Server*
+- `$/example/ npm run dev` *to build and start the demo apps*
 - visit http://localhost:8081/pub/ and then http://localhost:8081/pub/
 - Try to publish some Data and the subcribers will automatically fetch it as soon as it is available.
 
